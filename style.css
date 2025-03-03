@@ -120,7 +120,7 @@ nav {
     box-shadow: var(--shadow-elevation-high);
     border: 4px solid #1a1319;
     margin: 20px 0 50px;
-    padding: 15px 50px;
+    padding: 15px 30px;
     position: relative;
 }
 
@@ -147,8 +147,9 @@ nav::after {
 
 nav ul {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 nav li {
@@ -159,6 +160,26 @@ nav a {
     text-decoration: none;
     color: #1a1319;
     text-transform: uppercase;
+    position: relative;
+}
+
+nav a:not(.styled-button)::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #1a1319;
+    bottom: -1px;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+nav a:not(.styled-button):hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
 }
 
 nav a.styled-button {
@@ -172,6 +193,7 @@ h4,
 h5,
 h6 {
     margin-bottom: 10px;
+    font-family: "Fascinate", system-ui;
 }
 
 h1 {
@@ -190,7 +212,7 @@ p {
 
 section {
     width: 100%;
-    padding: 40px 50px;
+    padding: 40px 30px;
     margin-bottom: 50px;
     position: relative;
     min-height: 300px;
@@ -198,6 +220,7 @@ section {
 
 section.two-col {
     display: flex;
+    flex-direction: column;
     flex: 1;
     gap: 30px;
 }
@@ -258,7 +281,7 @@ a.styled-button {
     position: relative;
     top: 0;
     right: 0;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
     box-shadow: -4px 4px 0 0 #1a1319;
     letter-spacing: 2px;
@@ -363,13 +386,34 @@ img.styled-image {
 
 /* Content Width and Responsiveness */
 .content-width {
-    width: 70%;
+    width: 85%;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 @media (min-width: 992px) {
+    nav {
+        padding: 15px 50px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    section {
+        padding: 40px 50px;
+    }
+
+    section.two-col {
+        flex-direction: row;
+    }
+
     .content-width {
         width: 90%;
+    }
+
+    #logo {
+        font-size: 2.75rem;
     }
 }
