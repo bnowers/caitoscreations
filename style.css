@@ -96,22 +96,31 @@ h6 {
 
 html {
     height: 100%;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 16px;
 }
 
 body {
+    height: 100%;
+    background: rgb(234, 203, 210);
+    background: linear-gradient(177deg, rgba(234, 203, 210, 1) 0%, rgba(223, 174, 180, 1) 55%, rgba(130, 102, 127, 1) 100%);
     background-attachment: fixed;
-    background: rgb(223, 174, 180);
-    background: linear-gradient(180deg, rgba(223, 174, 180, 1) 0%, rgba(223, 174, 180, 1) 55%, rgba(130, 102, 127, 1) 100%);
+    background-repeat: no-repeat;
+    color: #1a1319;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: #B486AB;
-    box-shadow: var(--shadow-elevation-medium);
-    border: 3px solid #1a1319;
+    box-shadow: var(--shadow-elevation-high);
+    border: 4px solid #1a1319;
     margin: 20px 0 50px;
-    padding: 15px 30px;
+    padding: 15px 50px;
     position: relative;
 }
 
@@ -129,26 +138,78 @@ nav::after {
     z-index: -1;
 }
 
+#logo {
+    font-size: 2.5rem;
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
 nav li {
     list-style: none;
 }
 
-nav a {}
+nav a {
+    text-decoration: none;
+    color: #1a1319;
+    text-transform: uppercase;
+}
 
-main {}
+nav a.styled-button {
+    padding: 10px 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 20px;
+}
 
 section {
     width: 100%;
-    padding: 40px;
+    padding: 40px 50px;
     margin-bottom: 50px;
     position: relative;
     min-height: 300px;
 }
 
+section.two-col {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+}
+
+section.two-col>div {
+    width: 100%;
+}
+
 section.styled-bg {
     background-color: #B486AB;
-    box-shadow: var(--shadow-elevation-medium);
-    border: 3px solid #1a1319;
+    box-shadow: var(--shadow-elevation-high);
+    border: 4px solid #1a1319;
     margin-bottom: 70px;
 }
 
@@ -187,11 +248,11 @@ section.styled-bg.lean-right::after {
 /* Button Styling */
 a.styled-button {
     border: 3px solid #1a1319;
-    padding: 10px 15px;
+    color: #1a1319;
+    padding: 20px;
     cursor: pointer;
     display: inline-block;
     background: #fff;
-    color: #1a1319;
     text-decoration: none;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
@@ -199,47 +260,33 @@ a.styled-button {
     right: 0;
     font-weight: 600;
     text-transform: uppercase;
+    box-shadow: -4px 4px 0 0 #1a1319;
+    letter-spacing: 2px;
+    right: 0;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     /* background: repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%) 50% / 15px 15px; */
 }
 
-a.styled-button::before {
-    content: '';
-    position: absolute;
-    background: #fff;
-    top: 7px;
-    right: 12px;
-    bottom: 7px;
-    left: 12px;
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    z-index: -1;
-}
-
-a.styled-button::after {
-    content: '';
-    position: absolute;
-    background: #1a1319;
-    top: -3px;
-    right: -3px;
-    bottom: -3px;
-    left: -3px;
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    clip-path: polygon(4% 0, 100% 0, 100% 90%, 95% 100%, 0 100%, 0 10%);
-    z-index: -2;
-}
-
 a.styled-button:hover {
-    top: -5px;
-    right: -5px;
+    right: 4px;
+    top: 4px;
+    box-shadow: 0 0 0 0 #1a131900
 }
 
-a.styled-button:hover::after {
-    top: -3px;
-    right: -3px;
-    bottom: -8px;
-    left: -8px;
+img.styled-image {
+    border: 3px solid #1a1319;
+    box-shadow: -6px 6px 0 0 #1a1319;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 /* Slider Styling */
+.swiper-container-wrapper {
+    position: relative;
+}
+
 .swiper {
     width: 100%;
     height: 100%;
@@ -250,11 +297,68 @@ a.styled-button:hover::after {
     height: auto;
 }
 
-.swiper-slide img{
+.swiper-slide img {
     width: 100%;
     height: 500px;
     object-fit: cover;
     border: 3px solid #1a1319;
+}
+
+.swiper-button-prev-unique,
+.swiper-button-next-unique {
+    position: absolute;
+    top: calc(50% - 20px);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.swiper-button-prev-unique div,
+.swiper-button-next-unique div {
+    position: relative;
+    background: #fff;
+    width: 40px;
+    height: 40px;
+    border: 3px solid #1a1319;
+    color: #1a1319;
+    font-size: 30px;
+    line-height: 1.1;
+    box-shadow: -4px 4px 0 0 #1a1319;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    right: 0;
+    top: 0;
+}
+
+.swiper-button-prev-unique div::before,
+.swiper-button-next-unique div::before {
+    top: 0;
+    position: absolute;
+}
+
+.swiper-button-prev-unique:hover div,
+.swiper-button-next-unique:hover div {
+    box-shadow: 0 0 0 0 #1a131900;
+    top: 4px;
+    right: 4px;
+}
+
+.swiper-button-prev-unique {
+    left: -20px;
+    right: auto;
+}
+
+.swiper-button-prev-unique div::before {
+    content: ' \23F4';
+    right: 0;
+}
+
+.swiper-button-next-unique {
+    left: auto;
+    right: -20px;
+}
+
+.swiper-button-next-unique div::before {
+    content: ' \23F5';
+    left: 2px;
 }
 
 /* Content Width and Responsiveness */
