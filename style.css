@@ -71,6 +71,29 @@ h6 {
 
 /* End CSS Reset */
 
+/* Better Shadows */
+:root {
+    --shadow-color: 312deg 20% 36%;
+    --shadow-elevation-low:
+        0.4px 0.5px 0.7px hsl(var(--shadow-color) / 0.35),
+        0.7px 0.9px 1.3px -1.2px hsl(var(--shadow-color) / 0.35),
+        1.6px 2.1px 3px -2.5px hsl(var(--shadow-color) / 0.35);
+    --shadow-elevation-medium:
+        0.4px 0.5px 0.7px hsl(var(--shadow-color) / 0.37),
+        1.3px 1.8px 2.5px -0.8px hsl(var(--shadow-color) / 0.37),
+        3.3px 4.4px 6.2px -1.7px hsl(var(--shadow-color) / 0.37),
+        8px 10.7px 15px -2.5px hsl(var(--shadow-color) / 0.37);
+    --shadow-elevation-high:
+        0.4px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+        2.3px 3.2px 4.4px -0.4px hsl(var(--shadow-color) / 0.34),
+        4.4px 5.9px 8.3px -0.7px hsl(var(--shadow-color) / 0.34),
+        7.2px 9.7px 13.6px -1.1px hsl(var(--shadow-color) / 0.34),
+        11.5px 15.5px 21.7px -1.4px hsl(var(--shadow-color) / 0.34),
+        18px 24.2px 33.9px -1.8px hsl(var(--shadow-color) / 0.34),
+        27.4px 36.8px 51.6px -2.1px hsl(var(--shadow-color) / 0.34),
+        40.4px 54.2px 76.1px -2.5px hsl(var(--shadow-color) / 0.34);
+}
+
 html {
     height: 100%;
 }
@@ -85,9 +108,9 @@ nav {
     display: flex;
     justify-content: space-between;
     background-color: #B486AB;
-    box-shadow: 3px 3px 15px 3px #82667Fdd;
+    box-shadow: var(--shadow-elevation-medium);
     border: 3px solid #1a1319;
-    margin: 20px 0;
+    margin: 20px 0 50px;
     padding: 15px 30px;
     position: relative;
 }
@@ -110,25 +133,21 @@ nav li {
     list-style: none;
 }
 
-nav a {
+nav a {}
 
-}
-
-main {
-    
-}
+main {}
 
 section {
     width: 100%;
     padding: 40px;
     margin-bottom: 50px;
     position: relative;
-    height: 300px;
+    min-height: 300px;
 }
 
 section.styled-bg {
     background-color: #B486AB;
-    box-shadow: 3px 3px 15px 3px #82667Fdd;
+    box-shadow: var(--shadow-elevation-medium);
     border: 3px solid #1a1319;
     margin-bottom: 70px;
 }
@@ -143,6 +162,8 @@ section.styled-bg::after {
     background-size: 0.8rem 0.8rem;
     background-position: 0 0, 0.4rem 0.4rem;
     z-index: -1;
+    -webkit-mask-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0));
+    mask-image: linear-gradient(180deg, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 75%, rgb(0 0 0) 100%);
 }
 
 section.styled-bg.lean-left {
@@ -176,6 +197,21 @@ a.styled-button {
     position: relative;
     top: 0;
     right: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* background: repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%) 50% / 15px 15px; */
+}
+
+a.styled-button::before {
+    content: '';
+    position: absolute;
+    background: #fff;
+    top: 7px;
+    right: 12px;
+    bottom: 7px;
+    left: 12px;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: -1;
 }
 
 a.styled-button::after {
@@ -187,7 +223,8 @@ a.styled-button::after {
     bottom: -3px;
     left: -3px;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    z-index: -1;
+    clip-path: polygon(4% 0, 100% 0, 100% 90%, 95% 100%, 0 100%, 0 10%);
+    z-index: -2;
 }
 
 a.styled-button:hover {
@@ -196,12 +233,31 @@ a.styled-button:hover {
 }
 
 a.styled-button:hover::after {
-    top: 0px;
-    right: 0px;
+    top: -3px;
+    right: -3px;
     bottom: -8px;
     left: -8px;
 }
 
+/* Slider Styling */
+.swiper {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+.swiper-slide img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border: 3px solid #1a1319;
+}
+
+/* Content Width and Responsiveness */
 .content-width {
     width: 70%;
     max-width: 1000px;

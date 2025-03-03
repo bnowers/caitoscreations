@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>Caito's Creations | Tattoos</title>
 </head>
+
 <body>
     <header class="content-width">
         <nav>
@@ -21,13 +24,51 @@
         <section id="hero" class="styled-bg lean-left">
             <h1>Hey Fucker, Want a Tattoo?</h1>
             <br>
-            <a class="styled-button" href="">Click Here</a>
+            <a class="styled-button" href="">Click Here Right Now</a>
         </section>
         <section id="portfolio" class="styled-bg lean-right">
             <h2>Here is some cool work I've done</h2>
-            <!-- TODO: Portfolio Carousel/Slider -->
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide"><img src="images/badger-mushroom.jpeg"/></div>
+                    <div class="swiper-slide"><img src="images/bw-lotus.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/color-flower.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/color-hydrangea.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/dragon-ear.jpeg"/></div>
+                    <div class="swiper-slide"><img src="images/eclectic-chair.jpeg"/></div>
+                    <div class="swiper-slide"><img src="images/face-and-blade.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/gba-mononoke.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/hypnotoad.jpeg"/></div>
+                    <div class="swiper-slide"><img src="images/jewel-beetle.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/lucky.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/name-and-feather-rework.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/phoenix.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/rambo-ewok.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/reaper-and-wolf.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/reaper-and-wolf2.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/skull-and-flowers.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/tiger-and-skull.jpeg"/></div>
+                    <div class="swiper-slide"><img src="images/trad-lighthouse.jpeg"/></div>
+                    <div class="swiper-slide"><img src="images/trad-swallow.jpeg"/></div>
+                    <div class="swiper-slide"><img src="images/valkyrie.jpg"/></div>
+                    <div class="swiper-slide"><img src="images/vibrant-spider.jpeg"/></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
         </section>
     </main>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="index.js"></script>
 </html>
