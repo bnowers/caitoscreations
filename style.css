@@ -1,50 +1,158 @@
 /* CSS Reset */
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
-  }
-  
-  * {
+}
+
+* {
     /* 2. Remove default margin */
     margin: 0;
     /* 3. Add accessible line-height */
     line-height: calc(1em + 0.5rem);
-  }
-  
-  body {
-    
+}
+
+body {
     /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
-  }
-  
-  /* 5. Improve media defaults */
-  img, picture, video, canvas, svg {
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
     display: block;
     max-width: 100%;
-  }
-  
-  /* 6. Inherit fonts for form controls */
-  input, button, textarea, select {
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
     font: inherit;
-  }
-  
-  /* 7. Avoid text overflows */
-  p, h1, h2, h3, h4, h5, h6 {
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     overflow-wrap: break-word;
-  }
-  
-  /* 8. Improve line wrapping */
-  p {
+}
+
+/* 8. Improve line wrapping */
+p {
     text-wrap: pretty;
-  }
-  h1, h2, h3, h4, h5, h6 {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-wrap: balance;
-  }
-  
-  /*
+}
+
+/*
     9. Create a root stacking context
   */
-  #root, #__next {
+#root,
+#__next {
     isolation: isolate;
-  }
-  /* End CSS Reset */
+}
+
+/* End CSS Reset */
+
+html {
+    height: 100%;
+}
+
+body {
+    background-attachment: fixed;
+    background: rgb(223, 174, 180);
+    background: linear-gradient(180deg, rgba(223, 174, 180, 1) 0%, rgba(223, 174, 180, 1) 55%, rgba(130, 102, 127, 1) 100%);
+}
+
+nav {
+    display: flex;
+    background-color: #B486AB;
+    box-shadow: 3px 3px 15px 3px #82667Fdd;
+    border: 3px solid #1a1319;
+    margin: 20px 0;
+    padding: 15px 30px;
+}
+
+main {
+    
+}
+
+section {
+    width: 100%;
+    padding: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    height: 300px;
+}
+
+section div.styled-bg {
+    position: absolute;
+    background-color: #B486AB;
+    box-shadow: 3px 3px 15px 3px #82667Fdd;
+    border: 3px solid #1a1319;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+section div.styled-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at center,
+            #1a1319 0.15rem,
+            transparent 0), radial-gradient(circle at center, #1a1319 0.15rem, transparent 0);
+    background-size: 0.8rem 0.8rem;
+    background-position: 0 0, 0.4rem 0.4rem;
+}
+
+section div.styled-bg.lean-left {
+    transform: rotate(1.3deg);
+}
+
+section div.styled-bg.lean-left::after {
+    -webkit-mask-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0));
+    mask-image: linear-gradient(177deg, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 75%, rgb(0 0 0) 100%);
+}
+
+section div.styled-bg.lean-right {
+    transform: rotate(-1.3deg);
+}
+
+section div.styled-bg.lean-right::after {
+    -webkit-mask-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0));
+    mask-image: linear-gradient(183deg, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 75%, rgb(0 0 0) 100%);
+}
+
+.content-width {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+    .content-width {
+        width: 90%;
+    }
+}
