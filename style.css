@@ -135,14 +135,17 @@ nav::after {
     background-position: 0 0, 0.4rem 0.4rem;
     -webkit-mask-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0));
     mask-image: linear-gradient(177deg, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 60%, rgb(0 0 0) 100%);
-    z-index: -1;
 }
 
-#logo {
+.logo {
     font-size: 2.5rem;
     font-family: "Fascinate Inline", system-ui;
     font-weight: 400;
     font-style: normal;
+}
+
+.nav-menu {
+    z-index: 1;
 }
 
 nav ul {
@@ -156,14 +159,17 @@ nav li {
     list-style: none;
 }
 
-nav a {
+nav a,
+footer a {
     text-decoration: none;
     color: #1a1319;
     text-transform: uppercase;
     position: relative;
+    cursor: pointer;
 }
 
-nav a:not(.styled-button)::before {
+nav a:not(.styled-button)::before,
+footer a::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -177,7 +183,8 @@ nav a:not(.styled-button)::before {
     transition: transform .3s ease-in-out;
 }
 
-nav a:not(.styled-button):hover::before {
+nav a:not(.styled-button):hover::before,
+footer a:hover::before {
     transform-origin: left;
     transform: scaleX(1);
 }
@@ -218,14 +225,14 @@ section {
     min-height: 300px;
 }
 
-section.two-col {
+.two-col {
     display: flex;
     flex-direction: column;
     flex: 1;
     gap: 30px;
 }
 
-section.two-col>div {
+.two-col>div {
     width: 100%;
 }
 
@@ -305,6 +312,10 @@ img.styled-image {
     backface-visibility: hidden;
 }
 
+.attribution{
+    display: none;
+}
+
 /* Slider Styling */
 .swiper-container-wrapper {
     position: relative;
@@ -349,6 +360,8 @@ img.styled-image {
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     right: 0;
     top: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .swiper-button-prev-unique div::before,
@@ -384,10 +397,66 @@ img.styled-image {
     left: 2px;
 }
 
+footer {
+    background-color: #1a1319;
+    min-height: 200px;
+    border-top: 4px solid #fff;
+    color: #fff;
+    position: relative;
+    padding: 30px 0;
+}
+
+footer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at center,
+            #fff 0.15rem,
+            transparent 0), radial-gradient(circle at center, #fff 0.15rem, transparent 0);
+    background-size: 0.8rem 0.8rem;
+    background-position: 0 0, 0.4rem 0.4rem;
+    -webkit-mask-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0));
+    mask-image: linear-gradient(177deg, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 75%, rgb(0 0 0) 100%);
+}
+
+footer .logo {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+footer a{
+    color: #fff;
+}
+
+footer a::before{
+    background-color: #fff;
+}
+
+footer .content-width {
+    z-index: 1;
+    position: relative;
+}
+
+footer .phone img,
+footer .email img {
+    width: 15px;
+    display: inline;
+}
+
+footer .socials-list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+footer .socials-list img{
+    width: 40px;
+}
+
 /* Content Width and Responsiveness */
 .content-width {
     width: 85%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -405,7 +474,7 @@ img.styled-image {
         padding: 40px 50px;
     }
 
-    section.two-col {
+    .two-col {
         flex-direction: row;
     }
 
