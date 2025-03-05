@@ -275,6 +275,10 @@ section.styled-bg.lean-right::after {
     mask-image: linear-gradient(183deg, rgb(0 0 0 / 0) 0%, rgb(0 0 0 / 0) 75%, rgb(0 0 0) 100%);
 }
 
+section.center-callout {
+    text-align: center;
+}
+
 /* Button Styling */
 a.styled-button {
     border: 3px solid #1a1319;
