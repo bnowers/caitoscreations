@@ -9,10 +9,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fascinate&family=Fascinate+Inline&family=Molle&family=Pirata+One&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
-    <link rel=”stylesheet” type=”text/css” href=”https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/fullscreen/galleria.folio.min.css” />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/themes/classic/galleria.folio.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
     <title>Tattoo Portfolio | Caito's Creations</title>
 </head>
 
@@ -32,10 +31,33 @@
         </nav>
     </header>
     <main class="content-width">
-        <section id="hero" class="styled-bg">
-            <div class="galleria">
-                <img src="images/badger-mushroom.jpeg" />
-                <img src="images/bw-lotus.jpg" />
+        <section class="styled-bg">
+            <div id="nanogallery2"
+            data-nanogallery2 = '{
+                "thumbnailHeight":  150,
+                "thumbnailWidth":   150
+              }'
+            >
+              <a href="images/badger-mushroom.jpeg" data-ngThumb="images/badger-mushroom.jpeg">Badger Mushroom</a>
+              <a href="images/bw-lotus.jpg" data-ngThumb="images/bw-lotus.jpg">Lotus</a>
+              <a href="images/color-flower.jpg" data-ngThumb="images/color-flower.jpg">Color Flower</a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
+              <a href="images/" data-ngThumb="images/"></a>
                 <img src="images/color-flower.jpg" />
                 <img src="images/color-hydrangea.jpg" />
                 <img src="images/dragon-ear.jpeg" />
@@ -108,12 +130,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        (function () {
-            //Galleria.loadTheme('galleria-1.6.1/src/themes/classic/galleria.classic.js');
-            Galleria.run('.galleria');
-        }());
-    </script>
 </body>
 
 </html>
