@@ -100,7 +100,7 @@ html {
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 body {
@@ -217,6 +217,10 @@ p {
     margin-bottom: 20px;
 }
 
+strong{
+    font-weight: 900;
+}
+
 section {
     width: 100%;
     padding: 40px 30px;
@@ -286,7 +290,7 @@ a.styled-button {
     padding: 20px;
     cursor: pointer;
     display: inline-block;
-    background: #fff;
+    background: #f9cd22;
     text-decoration: none;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     position: relative;
@@ -299,20 +303,26 @@ a.styled-button {
     right: 0;
     top: 0;
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
     /* background: repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%) 50% / 15px 15px; */
+    /* text-shadow: 0px 0px 0 #1a1319, 0px 0px 0 #1a1319, 0px 0px 0 #1a1319, 0px 0px 0 #1a1319; */
 }
 
 a.styled-button:hover {
     right: 4px;
     top: 4px;
-    box-shadow: 0 0 0 0 #1a131900
+    box-shadow: 0 0 0 0 #1a131900;
+    /* background: repeating-conic-gradient(#f9cd22 0% 25%, #1a1319 0% 50%) 50% / 20px 20px; */
+    /* color: #fff; */
+    /* text-shadow: -2px -2px 0 #1a1319, 2px -2px 0 #1a1319, -2px 2px 0 #1a1319, 2px 2px 0 #1a1319; */
 }
 
 img.styled-image {
     border: 3px solid #1a1319;
     box-shadow: -6px 6px 0 0 #1a1319;
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -353,7 +363,7 @@ img.styled-image {
 .swiper-button-prev-unique div,
 .swiper-button-next-unique div {
     position: relative;
-    background: #fff;
+    background: #f9cd22;
     width: 40px;
     height: 40px;
     border: 3px solid #1a1319;
@@ -365,6 +375,7 @@ img.styled-image {
     right: 0;
     top: 0;
     -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -464,7 +475,7 @@ footer .socials-list img{
     margin: 0 auto;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1140px) {
     nav {
         padding: 15px 50px;
     }
