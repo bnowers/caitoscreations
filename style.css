@@ -274,6 +274,10 @@ section {
     gap: 30px;
 }
 
+.two-col.reverse {
+    flex-direction: column-reverse;
+}
+
 .two-col>div {
     width: 100%;
 }
