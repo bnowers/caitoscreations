@@ -218,15 +218,15 @@ nav .hamburger-menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 nav .hamburger-menu div {
-    width: 1.20rem;
-    min-height: 0.20rem;
+    width: 2rem;
+    min-height: 0.3rem;
     background-color: #1a1319;
-    margin: 2px 0;
+    margin: 3px 0;
 }
 
 h1,
@@ -349,8 +349,7 @@ a.styled-button,
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
-    /* background: repeating-conic-gradient(#fff 0% 25%, transparent 0% 50%) 50% / 15px 15px; */
-    /* text-shadow: 0px 0px 0 #1a1319, 0px 0px 0 #1a1319, 0px 0px 0 #1a1319, 0px 0px 0 #1a1319; */
+    /* background: repeating-conic-gradient(#f9cd22 0% 25%, #f9cd22 0% 50%) -50% / 20px 20px; */
 }
 
 a.styled-button:hover,
@@ -358,9 +357,8 @@ a.styled-button:hover,
     right: 4px;
     top: 4px;
     box-shadow: 0 0 0 0 #1a131900;
-    /* background: repeating-conic-gradient(#f9cd22 0% 25%, #1a1319 0% 50%) 50% / 20px 20px; */
+    /* background: repeating-conic-gradient(#f9cd22 0% 25%, #DEB928 0% 50%) 50% / 20px 20px; */
     /* color: #fff; */
-    /* text-shadow: -2px -2px 0 #1a1319, 2px -2px 0 #1a1319, -2px 2px 0 #1a1319, 2px 2px 0 #1a1319; */
 }
 
 img.styled-image {
@@ -369,6 +367,43 @@ img.styled-image {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+
+.styled-textbox {
+    background: #fff;
+    padding: 20px;
+    border: 3px solid #1a1319;
+	height: fit-content;
+}
+
+.fb-60{
+    flex-basis: initial;
+}
+
+.styled-textbox.tl-overhang {
+    width: fit-content;
+    margin-left: 29px;
+    margin-bottom: -35px;
+    z-index: 2;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.image-text-overlay {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.image-text-overlay .styled-image {
+    width: 90%;
+    float: right;
+}
+
+.image-text-overlay .styled-textbox {
+    width: 70%;
+    bottom: 89px;
+    left: 0;
+    position: absolute;
 }
 
 .attribution {
@@ -575,7 +610,8 @@ footer .socials-list img {
         padding: 40px 50px;
     }
 
-    .two-col {
+    .two-col,
+    .two-col.reverse {
         flex-direction: row;
     }
 
@@ -606,5 +642,16 @@ footer .socials-list img {
 
     .swiper-slide img {
         height: 500px;
+    }
+    
+    .image-text-overlay .styled-textbox {
+        width: 90%;
+        bottom: -50px;
+        left: 0;
+        position: absolute;
+    }
+
+    .fb-60 {
+        flex-basis: 60%;
     }
 }
